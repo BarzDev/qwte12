@@ -8,7 +8,7 @@ export default function RemoveBtn({ id }) {
     const confirmed = confirm("are u sure??");
 
     if (confirmed) {
-      const res = await fetch(`http://localhost:3000/api/topics?id=${id}`, {
+      const res = await fetch(`https://crud-mongo-db-git-main-barzdev.vercel.app?id=${id}`, {
         method: "DELETE",
       });
       if (res.ok) {
