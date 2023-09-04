@@ -20,8 +20,8 @@ export default async function TopicList() {
   const { topics } = await getTopic(); // menambah "await" (1/2)
   return (
     <>
-      {topics.map((t) => (
-        <div className="p-4 border border-slate-300 my-3 flex justify-between gap-5 items-start">
+      {topics.map((t, index) => (
+        <div key={index} className="p-4 border border-slate-300 my-3 flex justify-between gap-5 items-start">
           <div>
             <h2 className="font-bold text-2xl">{t.title}</h2>
             <div>{t.description}</div>
