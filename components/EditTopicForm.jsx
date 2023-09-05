@@ -7,12 +7,14 @@ export default function EditTopicForm({ id, title, description }) {
   const [newTitle, setNewTitle] = useState(title);
   const [newDescription, setNewDescription] = useState(description);
 
+  const url = "http://localhost:3000";
   const router = useRouter();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const res = await fetch(`https://crud-mongo-db-git-main-barzdev.vercel.app/api/topics/${id}`, {
+      // const res = await fetch(`${process.env.FETCH_URL}/api/topics/${id}`, {
+      const res = await fetch(`${url}/api/topics/${id}`, {
         method: "PUT",
         headers: {
           "Content-type": "application/json",

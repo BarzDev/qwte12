@@ -6,6 +6,7 @@ import { useRouter } from "next/navigation";
 export default function AddTopic() {
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
+  const url = "http://localhost:3000";
 
   const router = useRouter();
 
@@ -18,7 +19,7 @@ export default function AddTopic() {
     }
 
     try {
-      const res = await fetch("https://crud-mongo-db-git-main-barzdev.vercel.app/api/topics", {
+      const res = await fetch(`${url}/api/topics`, {
         method: "POST",
         headers: {
           "Content-type": "application/json",
